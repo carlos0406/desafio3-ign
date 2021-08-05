@@ -5,9 +5,7 @@ import { ptBR } from 'date-fns/locale';
 import { format } from 'date-fns';
 import { FiUser, FiCalendar, FiClock } from 'react-icons/fi';
 import { RichText } from 'prismic-dom';
-import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { route } from 'next/dist/next-server/server/router';
 import { getPrismicClient } from '../../services/prismic';
 import commonStyles from '../../styles/common.module.scss';
 import styles from './post.module.scss';
@@ -41,6 +39,17 @@ export default function Post({ post }: PostProps): JSX.Element {
       { locale: ptBR }
     ),
   };
+  const totalWorlds = pagePost.data.content.reduce((acc, session) => {
+    // eslint-disable-next-line no-param-reassign
+    acc += session.heading.split(' ').length;
+    const worlds = session.body.map(item => item.text.split(' ').length);
+    // eslint-disable-next-line no-return-assign
+    worlds.forEach(world => {
+      acc += world;
+    });
+    return acc;
+  }, 0);
+  const timeToRead = Math.ceil(totalWorlds / 200);
   const router = useRouter();
   return !router.isFallback ? (
     <div className={styles.content}>
@@ -57,7 +66,8 @@ export default function Post({ post }: PostProps): JSX.Element {
             {pagePost.data.author}
           </span>
           <span>
-            <FiClock />4 min
+            <FiClock />
+            {`${timeToRead} min`}
           </span>
         </div>
         {pagePost.data.content.map(session => (
