@@ -1,1 +1,21 @@
 // TODO
+.container {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.info {
+  color: var(--gray-200);
+  display: flex;
+  gap: 1.6rem;
+  span {
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 0.5rem;
+      height: 0.975rem;
+      width: 0.975rem;
+    }
+  }
+}

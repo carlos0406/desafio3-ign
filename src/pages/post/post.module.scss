@@ -1,1 +1,43 @@
-// TODO
+.content {
+  img {
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 4rem;
+  }
+  > div {
+    h1 {
+      line-height: 3.75rem;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gray-50);
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+.session {
+  h2 {
+    font-size: 2.25rem;
+    color: var(--gray-50);
+    margin: 3rem 0rem;
+  }
+  p,
+  span,
+  a,
+  ul {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin: 1.8rem 0;
+  }
+  a {
+    color: var(--pink-500);
+  }
+  strong {
+    font-weight: 700;
+    color: var(--gray-100);
+  }
+
+  ul {
+    padding-left: 1.5rem;
+  }
+}
