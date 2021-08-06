@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import Prismic from '@prismicio/client';
@@ -40,10 +41,9 @@ export default function Post({ post }: PostProps): JSX.Element {
     ),
   };
   const totalWorlds = pagePost.data.content.reduce((acc, session) => {
-    // eslint-disable-next-line no-param-reassign
     acc += session.heading.split(' ').length;
     const worlds = session.body.map(item => item.text.split(' ').length);
-    // eslint-disable-next-line no-return-assign
+
     worlds.forEach(world => {
       acc += world;
     });
@@ -59,7 +59,7 @@ export default function Post({ post }: PostProps): JSX.Element {
         <div className={commonStyles.info}>
           <span>
             <FiCalendar width="15" />
-            {pagePost.first_publication_date.toString()}
+            {pagePost.first_publication_date}
           </span>
           <span>
             <FiUser />
