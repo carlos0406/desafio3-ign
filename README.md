@@ -1,6 +1,6 @@
 <h1 align="center">< / >Spacetraveling</h1>
  olá 🙋‍♂️
-<p>spacetraveling é um blog onde usamos <a href="https://prismic.io/">Prismic CMS</a> para serviço para cadastrar as postagens </p>
+<p>spacetraveling é um blog onde usamos <a href="https://prismic.io/">Prismic CMS</a> para serviço para cadastrar as postagens e nextjs para gerar os posts de maneira estatica </p>
 <div>
   <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt=""/>
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt=""/>
